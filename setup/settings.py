@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'escola',
     'drf_yasg',
     "corsheaders",
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +141,10 @@ REST_FRAMEWORK = {
     'DEFAULT_THROTTLE_RATES': {
         'anon': '20/day',
         'user': '50/day'
-    }
+    },
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20,
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.QueryParameterVersioning'
 }
 
 

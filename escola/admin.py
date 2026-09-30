@@ -5,7 +5,8 @@ class Estudantes(admin.ModelAdmin):
     list_display = ('id', 'name', 'email', 'cpf','date_birth', 'phone')
     list_display_links = ('id', 'name',)
     list_per_page = 20
-    search_fields = ('name',)
+    search_fields = ('name','cpf',)
+    ordering = ('name',)
 
 admin.site.register(Estudante, Estudantes)
 
